@@ -139,4 +139,33 @@ public class BinarySearchTree {
         }
         return 0;
     }
+
+    //Iterative insert
+    public void insertIteratively(int data){
+        BSTNode newNode = new BSTNode(data);
+
+        BSTNode x= root;
+        BSTNode y = null;
+
+        while(x != null){
+
+            y=x;
+            if(data<x.data){
+                x=x.lchild;
+            }else{
+                x=x.rchild;
+            }
+
+        }
+
+        if(y==null){
+            y=newNode;
+        }else if(data<y.data){
+            y.lchild=newNode;
+        }else{
+            y.rchild=newNode;
+        }
+
+
+    }
 }

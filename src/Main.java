@@ -10,17 +10,10 @@ public class Main {
         bst.insert(20);
         bst.insert(10);
         bst.insert(30);
-
-        bst.preOrder();
-        System.out.println();
         bst.inOrder();
         System.out.println();
-        bst.postOrder();
+        bst.insertIteratively(5);
+        bst.inOrder();
         System.out.println();
-        bst.levelOrder();
-        System.out.println();
-        System.out.println(bst.count());
-        System.out.println(bst.height());
-
     }
 }
