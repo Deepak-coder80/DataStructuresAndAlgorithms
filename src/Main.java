@@ -1,18 +1,19 @@
+import BinarySearchTree.Base.BinarySearchTree;
+import Graph.Graphs;
 import Stack.StackApplications.Conversion;
 
 public class Main {
 
     public static void main(String args[]){
-        Conversion stackConvertions = new Conversion();
-        String infix = "a+b*(c^d-e)^(f+g*h)-i";
+        BinarySearchTree bst = new BinarySearchTree();
 
-        System.out.println("Given Infix Expression : "+infix);
-        String result = stackConvertions.infixToPostfix(infix);
-
-        if(result==null){
-            System.out.println("Check your infix string.There is a missing of closing bracket");
-        }else{
-            System.out.println("Corresponding Postfix String : "+result);
-        }
+        bst.insert(20);
+        bst.insert(10);
+        bst.insert(30);
+        bst.inOrder();
+        System.out.println();
+        bst.insertIteratively(5);
+        bst.inOrder();
+        System.out.println();
     }
 }
