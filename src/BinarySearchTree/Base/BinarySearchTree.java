@@ -2,6 +2,10 @@ package BinarySearchTree.Base;
 
 import Queues.MyNodeQueue;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 public class BinarySearchTree {
     private BSTNode root;
 
@@ -166,6 +170,48 @@ public class BinarySearchTree {
             y.rchild=newNode;
         }
 
+    }
 
+    //iterative
+    //postorder
+    public List<Integer> ItepostOrder(){
+        Stack<BSTNode> st1 = new Stack<BSTNode>();
+        Stack<BSTNode> st2 = new Stack<BSTNode>();
+        List<Integer> postOrder = new ArrayList<Integer>();
+
+        if(root==null){
+            return  null;
+        }
+        BSTNode Temp = root;
+        st1.push(Temp);
+        while(!st1.isEmpty()){
+            Temp=st1.pop();
+            st2.push(Temp);
+            if(Temp.lchild!=null){
+                st1.push(Temp.lchild);
+            }
+            if(Temp.rchild!=null){
+                st1.push(Temp.rchild);
+            }
+        }
+        while(!st2.isEmpty()){
+            postOrder.add(st2.pop().data);
+        }
+        return postOrder;
+    }
+
+    public void ItepreOrder(){
+        BSTNode t= root;
+        Stack<BSTNode> stack = new Stack<>();
+        while(t!=null || !stack.isEmpty()){
+            if(t!=null){
+                System.out.print(t.data+",");
+                stack.push(t);
+                t=t.lchild;
+            }else{
+                t=stack.pop();
+                t=t.rchild;
+            }
+        }
     }
 }

@@ -10,10 +10,9 @@ public class Main {
         bst.insert(20);
         bst.insert(10);
         bst.insert(30);
-        bst.inOrder();
         System.out.println();
-        bst.insertIteratively(5);
-        bst.inOrder();
+        bst.ItepreOrder();
         System.out.println();
+        System.out.println(bst.ItepostOrder().toString());
     }
 }
